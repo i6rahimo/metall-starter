@@ -1,0 +1,29 @@
+.stock {
+    margin: 0 0 120px;
+    &__title{ 
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; 
+        margin: 0 0 50px;
+    }
+}
+
+.stock__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    &-up {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+    }
+    &-down {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+    }
+}

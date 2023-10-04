@@ -1,0 +1,78 @@
+.product {
+    margin: 0 0 120px;
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    &__item {
+        width: 360px;
+        
+        &-img {
+            position: relative;
+            height: 200px;
+            border-radius: 15px 15px 0 0;
+            // background-image: url("../../images/pr1.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        &-name {
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%;
+            color: #fff;
+            text-transform: uppercase; 
+            padding: 140px 0 0 30px;
+        }
+        
+        &-links {
+            display: flex;
+            flex-direction: column;
+            min-height: 358px;
+            max-width: 100%;
+            gap: 20px;
+            padding: 26px 20px 28px 20px;
+            border-radius: 0 0 15px 15px;
+            border: 1px solid var(--primary-color);
+            height: fit-content;
+        }
+        &-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+.product__item:nth-child(1) .product__item-img {
+    background-image: url('../../images/pr1.png');
+
+}
+.product__item:nth-child(2) .product__item-img {
+    background-image: url('../../images/pr2.png');
+}
+.product__item:nth-child(3) .product__item-img {
+    background-image: url('../../images/pr3.png');
+}
+.product__item:nth-child(4) .product__item-img {
+    background-image: url('../../images/pr4.png');
+}
+.product__item:nth-child(5) .product__item-img  {
+    background-image: url('../../images/pr5.png');
+}
+.product__item:nth-child(6) .product__item-img {
+    background-image: url('../../images/pr6.png');
+}
+
+.product__item-href {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}

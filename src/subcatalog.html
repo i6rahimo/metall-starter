@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Контакты'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html')
+
+      <main class="page">
+        <div data-observ></div>
+        <section class="subcatalog">
+            <div class="subcatalog__container">
+                <div class="subcatalog__items">
+                    <div class="subcatalog__item">
+                        <div class="subcatalog__item-img">
+                            <a href="#" class="subcatalog__item-href"></a>
+                            <p class="subcatalog__item-name">Арматура, катанка</p>
+                        </div>
+                    </div>
+        
+                    <div class="subcatalog__item">
+                        <div class="subcatalog__item-img">
+                            <p class="subcatalog__item-name">Сетка сварная</p>
+                        </div>
+                    </div>
+
+                    <div class="subcatalog__item">
+                        <div class="subcatalog__item-img">
+                            <p class="subcatalog__item-name">Балка, швеллер</p>
+                        </div>
+                    </div>
+
+
+                    <div class="subcatalog__item">
+                        <div class="subcatalog__item-img">
+                            <p class="subcatalog__item-name">уголок</p>
+                        </div>
+                    </div>
+        
+                    <div class="subcatalog__item">
+                        <div class="subcatalog__item-img">
+                            <p class="subcatalog__item-name">круг</p>
+                        </div>
+                    </div>
+
+                    <div class="subcatalog__item">
+                        <div class="subcatalog__item-img">
+                            <p class="subcatalog__item-name">Полоса, квадрат</p>
+                        </div>
+                    </div>
+
+                    <div class="subcatalog__item">
+                        <div class="subcatalog__item-img">
+                            <p class="subcatalog__item-name">Оцинкованный прокат</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+      </main>
+
+      @@include('html/footer.html')
+    </div>
+
+    @@include('html/popupExample.html')
+    @@include('html/script.html')
+  </body>
+</html>
