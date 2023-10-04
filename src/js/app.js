@@ -96,3 +96,104 @@ if(isMobile.any()){
 }else{
 	body.classList.add('mouse');
 }
+
+
+
+
+const certificate = new Swiper('.certificate__slider', {
+	// Optional parameters
+	slidesPerView: 4,
+	spaceBetween: 50,
+	loop: true,
+	slideClass: 'certificate__slide',
+	wrapperClass: 'certificate__wrapper',
+	observeParents: true,
+	navigation: {
+	  nextEl: '.certificate-btn-next',
+	  prevEl: '.certificate-btn-prev',
+	},
+
+});
+
+
+const documentation = new Swiper('.documentation__slider', {
+	// Optional parameters
+	slidesPerView: 4,
+	spaceBetween: 50,
+	loop: true,
+	slideClass: 'documentation__slide',
+	wrapperClass: 'documentation__wrapper',
+
+	navigation: {
+	  nextEl: '.documentation-btn-next',
+	  prevEl: '.documentation-btn-prev',
+	},
+
+});
+
+
+
+const information = new Swiper('.information__slider', {
+	// Optional parameters
+	slidesPerView: 4,
+	spaceBetween: 50,
+	loop: true,
+	slideClass: 'information__slide',
+	wrapperClass: 'information__wrapper',
+
+	navigation: {
+	  nextEl: '.information-btn-next',
+	  prevEl: '.information-btn-prev',
+	},
+
+});
+
+
+const pravo = new Swiper('.pravo__slider', {
+	// Optional parameters
+	slidesPerView: 4,
+	spaceBetween: 50,
+	loop: true,
+	slideClass: 'pravo__slide',
+	wrapperClass: 'pravo__wrapper',
+
+	navigation: {
+	  nextEl: '.pravo-btn-next',
+	  prevEl: '.pravo-btn-prev',
+	},
+
+});
+
+
+const recomendation = new Swiper('.recomendation__slider', {
+	// Optional parameters
+	slidesPerView: 4,
+	spaceBetween: 50,
+	loop: true,
+	slideClass: 'recomendation__slide',
+	wrapperClass: 'recomendation__wrapper',
+
+	navigation: {
+	  nextEl: '.recomendation-btn-next',
+	  prevEl: '.recomendation-btn-prev',
+	},
+
+});
+
+
+const company = new Swiper('.company__slider', {
+	// Optional parameters
+	slidesPerView: 4,
+	spaceBetween: 50,
+	loop: true,
+	slideClass: 'company__slide',
+	wrapperClass: 'company__wrapper',
+
+	navigation: {
+	  nextEl: '.company-btn-next',
+	  prevEl: '.company-btn-prev',
+	},
+
+});
+
+
