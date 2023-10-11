@@ -65,7 +65,10 @@
 }
 
 .btn {
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   background-color: var(--secondary-color);
   color: #fff;
   padding: 30px 40px;
