@@ -7,6 +7,14 @@
     // ..стили для липкого хедера
     position: fixed;
     background-color: #fff;
+    padding: 30px 0 90px;
+    .header__menu {
+      position: relative;
+      margin: 30px 0 0;
+    }
+    .menu__link {
+      color: #000;
+    }
   }
 
   // .header__container
@@ -126,6 +134,15 @@
     font-style: normal;
     font-weight: 400;
     line-height: 100%; 
+  }
+
+  &-cart {
+    z-index: 1;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-image: url('../../images/cart.svg');
   }
 }
 
