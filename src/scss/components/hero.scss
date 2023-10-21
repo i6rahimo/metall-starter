@@ -64,18 +64,26 @@
 }
 
 .part {
-    margin: 0 0 119px;
+    margin: 0 auto 119px;
+    &__wrapper {
+        position: relative;
+        // overflow: hidden;
+    }
+    &__items {
+        display: flex;
+        height: 100%;
+    }
+    &__item {
+        display: flex;
+        margin: 40px auto 0;
+        display: flex;
+        flex-shrink: 0;
+    }
     &__title {
         font-size: 32px;
         font-style: normal;
         font-weight: 600;
         line-height: 125%;
-    }
-    &__items {
-        margin: 40px 0 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
     }
 }
 

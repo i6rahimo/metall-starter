@@ -13,6 +13,9 @@
   max-width: rem($maxWidthContainer);
   margin: 0 auto;
   padding: 0 rem($mainOffset);
+  @include media-mx(460) {
+    max-width: 360px;
+  }
 }
 
 // Стили отзывчивых картинок (IBG) ============================================

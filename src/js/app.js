@@ -197,3 +197,69 @@ const company = new Swiper('.company__slider', {
 });
 
 
+const partners = new Swiper('.part__wrapper', {
+	// Optional parameters
+	loop: false,
+	slideClass: 'part__item',
+	wrapperClass: 'part__items',
+
+	navigation: {
+	  nextEl: '.company-btn-next',
+	  prevEl: '.company-btn-prev',
+	},
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+		  slidesPerView: 2,
+		  spaceBetween: 10
+		},
+		// when window width is >= 480px
+		480: {
+		  slidesPerView: 3,
+		  spaceBetween: 30
+		},
+		// when window width is >= 640px
+		640: {
+		  slidesPerView: 6,
+		  spaceBetween: 40
+		}
+	  },
+
+});
+
+
+	// 	// do functionality on screens smaller than 768px
+	// 	alert('qwe')
+
+	const product = new Swiper('.product__slider', {
+		// Optional parameters
+		direction: 'horizontal',
+		loop: true,
+		slideClass: 'product__item',
+		wrapperClass: 'product__items',
+		slidesPerView: 3,
+		spaceBetween: 10,
+		breakpoints: {
+			// when window width is >= 320px
+			320: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+				wrapperClass: 'product__items',
+			},
+			460: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+				wrapperClass: 'product__itemss',
+			},
+			},			
+});
+
+
+window.addEventListener('resize', function(event){
+		if(window.innerWidth > 790) {
+			product.disable()
+		} else if (window.innerWidth < 790) {
+			product.enable()
+		}
+		// do stuff here
+});
