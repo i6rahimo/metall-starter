@@ -122,3 +122,38 @@
   gap: 10px;
   margin: 50px 0 0;
 }
+
+
+
+.footer__mb {
+  display: none;
+}
+@include media-mx(540) {
+  .footer__wrapper {
+    display: none;
+  } 
+  .footer__mb {
+    display: flex;
+  }
+  .footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+    text-transform: uppercase;
+    margin: 0 0 30px;
+  }
+  .footer__serach {
+    margin: 0 0 30px;
+    input {
+      color: #9D9D9C;
+    }
+  }
+  .footer__mb-list__wrapper {
+    display: flex;
+    gap: 30px; 
+  }
+}

@@ -89,8 +89,17 @@
 
 
 @include media-mx(940) {
+    .part__title {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; 
+    }
+    .part__item {
+        margin: 25px auto 0;
+    }
     .hero {
-      margin: 100px 0 100px;
+      margin: 100px 0 60px;
       padding: 50px 0 50px;
       &__title {
         font-size: 28px;

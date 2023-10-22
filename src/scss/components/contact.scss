@@ -115,5 +115,57 @@
 }
 
 
+.contact__home-coltitle {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    color: #808080;
+}
+.contact__col-hometext {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+}
 
 
+@include media-mx(540) {
+    .contact {
+        margin: 0 0 60px;
+        &__wrapper {
+            padding: 30px 25px 40px;
+        }
+    }
+    .contact__about-text {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%;
+    }
+    .contact__about-text span {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 135%;
+    }
+    .contact__about-text p {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; 
+        margin: 0  0 30px;
+    }
+    .contact__cols {
+        margin: 30px 0 0;
+    }
+    .contact__map {
+        height: 180px;
+        img {
+            object-fit: cover;
+            height: 100%;
+            border-radius: 15px;
+        }
+    }
+
+}

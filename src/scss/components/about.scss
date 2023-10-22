@@ -61,17 +61,28 @@
 }
 .about__gallery {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     width: 100%;
     gap: 10px;
+    &-left {
+        max-width: 100%;
+    }
     img {
         max-width: 100%;
+    }
+    @include media-mx(560) {
+        flex-wrap: wrap;
     }
 }
 .about__gallery-right {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @include media-mx(560) {
+        width: 100%;
+    }
+    img {
+    }
 }
 
 
@@ -431,4 +442,83 @@
     width: 130px;
     height: 130px;
     object-fit: contain;
+}
+
+.about-slider {
+    display: none;
+}
+.about-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.about-slide {
+    flex-shrink: 0;
+    max-width: 300px;
+}
+.about__project-btn__mb {
+    display: none;
+}
+@include media-mx(460) {
+    .about {
+        margin: 0 0 60px;
+    }
+    .about__gallery {
+        display: none;
+    }   
+    .about-slider {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    } 
+    .about-pagination.about-pagination {
+        width: 40%;
+        margin: 0 auto 0;
+    }
+    .swiper-pagination-bullet {
+        background: #F1F1F1;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #181818;
+    }
+    .about {
+        &__title {
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; 
+        }
+        &__subtitle {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 135%; 
+        }
+    }
+    .about__number-title {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; 
+    }
+    .about__number-subtitle {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 135%;
+    }
+    .about__project-btn {
+        display: none;
+    }
+    .about__project {
+        margin: 0 0 25px;
+    }
+    .about__project-btn__mb {
+        display: flex;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 135%; 
+    }
 }

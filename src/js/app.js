@@ -228,38 +228,85 @@ const partners = new Swiper('.part__wrapper', {
 });
 
 
-	// 	// do functionality on screens smaller than 768px
-	// 	alert('qwe')
 
-	const product = new Swiper('.product__slider', {
-		// Optional parameters
-		direction: 'horizontal',
-		loop: true,
-		slideClass: 'product__item',
-		wrapperClass: 'product__items',
-		slidesPerView: 3,
-		spaceBetween: 10,
-		breakpoints: {
-			// when window width is >= 320px
-			320: {
-				slidesPerView: 1,
-				spaceBetween: 10,
-				wrapperClass: 'product__items',
-			},
-			460: {
-				slidesPerView: 2,
-				spaceBetween: 10,
-				wrapperClass: 'product__itemss',
-			},
-			},			
+const product = new Swiper('.product__slider', {
+	// Optional parameters
+	direction: 'horizontal',
+	loop: true,
+	slideClass: 'product__slide',
+	wrapperClass: 'product__slider-wrapper',
+	// slidesPerView: 3,
+	spaceBetween: 10,
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		},			
+});
+window.addEventListener('resize', function(event){
+		if(window.innerWidth > 790) {
+			product.destroy()
+		} 
+
 });
 
 
-window.addEventListener('resize', function(event){
-		if(window.innerWidth > 790) {
-			product.disable()
-		} else if (window.innerWidth < 790) {
-			product.enable()
-		}
-		// do stuff here
+const aboutSlider = new Swiper('.about-slider', {
+	// Optional parameters
+	direction: 'horizontal',
+	loop: true,
+	slideClass: 'about-slide',
+	wrapperClass: 'about-wrapper',
+	pagination: {
+    	el: '.about-pagination',
+  	},
+	// slidesPerView: 3,
+	spaceBetween: 10,
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		},			
+});
+
+const stockSlider = new Swiper('.stock-slider', {
+	// Optional parameters
+	direction: 'horizontal',
+	loop: true,
+	slideClass: 'stock-slide',
+	wrapperClass: 'stock-wrapper',
+	pagination: {
+    	el: '.stock-pagination',
+  	},
+	// slidesPerView: 3,
+	spaceBetween: 10,
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+
+		},
+		460: {
+			slidesPerView: 4,
+			spaceBetween: 10,
+
+		},
+		},			
 });
