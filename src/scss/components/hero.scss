@@ -89,6 +89,9 @@
 
 
 @include media-mx(940) {
+    .part {
+        margin: 0 0 60px;
+    }
     .part__title {
         font-size: 28px;
         font-style: normal;
@@ -99,7 +102,7 @@
         margin: 25px auto 0;
     }
     .hero {
-      margin: 100px 0 60px;
+      margin: 70px 0 60px;
       padding: 50px 0 50px;
       &__title {
         font-size: 28px;

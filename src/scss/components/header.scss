@@ -302,6 +302,7 @@
     margin: 200px auto 0;
     @include media-mx(460) {
       max-width: 360px;
+      overflow: auto;
     }
   }
 
