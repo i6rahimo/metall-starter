@@ -339,3 +339,146 @@ const stockSlider = new Swiper('.stock-slider', {
 		},
 		},			
 });
+
+
+const aboutStaff = new Swiper('.about__staff-slider', {
+	// Optional parameters
+	direction: 'horizontal',
+	loop: true,
+	slideClass: 'staff__slide',
+	wrapperClass: 'about__staff-wrapper',
+	spaceBetween: 10,
+	// slidesPerView: 3,
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		660: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+
+		},
+		860: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+
+		},
+		},			
+});
+
+
+
+
+
+
+
+// const aboutGallerySubmain = new Swiper('.about__gallery-submain', {
+// 	// Optional parameters
+
+// 	slideClass: 'about__gallery-main-slide',
+// 	wrapperClass: 'about__gallery-main-wrapper',
+
+// 	breakpoints: {
+// 		// when window width is >= 320px
+// 		320: {
+// 		  slidesPerView: 2,
+// 		  spaceBetween: 10
+// 		},
+// 		// when window width is >= 480px
+// 		480: {
+// 		  slidesPerView: 3,
+// 		  spaceBetween: 30
+// 		},
+// 		// when window width is >= 640px
+// 		640: {
+// 		  slidesPerView: 4,
+// 		  spaceBetween: 40
+// 		}
+// 	  },
+
+// });
+
+
+// const aboutGalleryMain = new Swiper('.about__gallery-main', {
+// 	// Optional parameters
+
+// 	slideClass: 'about__gallery-main-slide',
+// 	wrapperClass: 'about__gallery-main-wrapper',
+
+// 	navigation: {
+// 	  nextEl: '.about__gallery-btn-next',
+// 	  prevEl: '.about__gallery-btn-prev',
+// 	},
+// 	breakpoints: {
+// 		// when window width is >= 320px
+// 		320: {
+// 		  slidesPerView: 2,
+// 		  spaceBetween: 10
+// 		},
+// 		// when window width is >= 480px
+// 		480: {
+// 		  slidesPerView: 3,
+// 		  spaceBetween: 30
+// 		},
+// 		// when window width is >= 640px
+// 		640: {
+// 		  slidesPerView: 1,
+// 		  spaceBetween: 40
+// 		}
+// 	  },
+// 	  thumbs: {
+// 		swiper: aboutGallerySubmain,
+// 	}
+// });
+
+const slider = document.querySelector('.about__gallery-main');
+const sliderNav = document.querySelector('.about__gallery-submain');
+
+let mySwiperNav = new Swiper(sliderNav, {
+	slidesPerView: 5,
+	spaceBetween: 10,
+	loopedSlides: 5,
+	freeMode: true,
+	watchSlidesVisibility: true,
+	watchSlidesProgress: true,
+	direction: 'horizontal',
+	slideClass: 'about__gallery-main-slide',
+	wrapperClass: 'about__gallery-main-wrapper',
+
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	navigation: {
+	  nextEl: '.about__gallery-btn-next',
+	  prevEl: '.about__gallery-btn-prev',
+	},
+})
+
+let mySwiper = new Swiper(slider, {
+	spaceBetween: 10,
+	loopedSlides: 5,
+	slideClass: 'about__gallery-main-slide',
+	wrapperClass: 'about__gallery-main-wrapper',
+
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	thumbs: {
+		swiper: mySwiperNav,
+	}
+	
+})
