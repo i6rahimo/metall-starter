@@ -67,7 +67,10 @@
     margin: 0 auto 119px;
     &__wrapper {
         position: relative;
-        // overflow: hidden;
+        overflow: hidden;
+        @include media-mx(460) {
+            overflow: visible;
+        }
     }
     &__items {
         display: flex;

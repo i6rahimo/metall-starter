@@ -227,6 +227,35 @@ const partners = new Swiper('.part__wrapper', {
 
 });
 
+const reviewSlider = new Swiper('.about__reviews-slider ', {
+	// Optional parameters
+	loop: false,
+	slideClass: 'about__reviews-slide',
+	wrapperClass: 'about__reviews-wrapper',
+
+	navigation: {
+	  nextEl: '.about__reviews-btn-next',
+	  prevEl: '.about__reviews-btn-prev',
+	},
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+		  slidesPerView: 2,
+		  spaceBetween: 10
+		},
+		// when window width is >= 480px
+		480: {
+		  slidesPerView: 3,
+		  spaceBetween: 30
+		},
+		// when window width is >= 640px
+		640: {
+		  slidesPerView: 6,
+		  spaceBetween: 40
+		}
+	  },
+
+});
 
 
 const product = new Swiper('.product__slider', {
