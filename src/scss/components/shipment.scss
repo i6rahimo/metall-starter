@@ -1,9 +1,13 @@
 .shipment__hero {
     background-image: url("../../images/shipment-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     padding: 70px 50px;
     margin: 0 0 100px;
+    border-radius: 15px;
     &-title {
-        font-size: 44px;
+        font-size: clamp(28px, 5vw, 44px);
         font-style: normal;
         font-weight: 600;
         line-height: 125%; 
@@ -16,7 +20,7 @@
         }
     }
     &-subtitle {
-        font-size: 22px;
+        font-size: clamp(16px, 5vw, 22px);
         font-style: normal;
         font-weight: 500;
         line-height: 125%; 
@@ -92,7 +96,7 @@
         background-color: var(--primary-color);
     }
     &-title {
-        font-size: 44px;
+        font-size: clamp(22px, 5vw, 44px);
         font-style: normal;
         font-weight: 500;
         line-height: 115%; 
@@ -103,7 +107,7 @@
     }
     &-subtitle {
         color: #fff;
-        font-size: 22px;
+        font-size: clamp(16px, 5vw, 22px);
         font-style: normal;
         font-weight: 400;
         line-height: 125%;
@@ -206,10 +210,53 @@
         flex-wrap: wrap;
         &-content {
             width: 100%;
+            border-radius: 15px;
         }
         &-form {
             width: 100%;
+            border-radius: 15px;
+            margin: 30px auto 0;
         }
     }
 
+}
+
+@include media-mx(460) {
+    .shipment__items {
+        gap: 20px;
+    }
+    .shipment__item {
+        margin: 0;
+    }
+
+    .shipment__more {
+        margin: 30px auto 0;
+    }
+    .shipment__hero {
+        padding: 30px 30px;
+    }
+    .shipment__hero-title {
+        margin: 0 0 20px;
+    }
+    .shipment__item-name {
+        font-size: 18px;
+    }
+    .shipment__item-explain {
+        font-size: 16px;
+    }
+    .shipment__item-text {
+        padding: 25px 25px 30px 25px;
+    }
+    .shipment__form-content {
+        padding: 30px 30px 40px 30px;
+    }
+    .shipment__form-subtitle {
+        margin: 15px 0 20px;
+    }
+    .shipment__form-items {
+        gap: 15px;
+    }
+    .shipment__form-item__text {
+        font-size: 14px;
+    }
 }

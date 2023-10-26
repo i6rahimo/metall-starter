@@ -16,6 +16,7 @@
       margin: 30px 0 0;
       @include media-mx(940) {
         margin: 23px 0 0;
+        padding: 0;
       }
     }
     .menu__link {

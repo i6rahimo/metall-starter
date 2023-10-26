@@ -9,7 +9,7 @@
         border-radius: 15px;
     }
     &__title {
-        font-size: 44px;
+        font-size: clamp(28px, 5vw, 44px);
         font-style: normal;
         font-weight: 600;
         line-height: 125%; 
@@ -17,7 +17,7 @@
         margin: 0 0 30px;
     }
     &__subtitle {
-        font-size: 22px;
+        font-size: 22px clamp(16px, 5vw, 22px);
         font-style: normal;
         font-weight: 500;
         line-height: 125%; 
@@ -30,7 +30,7 @@
 .certificate {
     margin: 0 0 120px;
     &__title {
-        font-size: 30px;
+        font-size: clamp(22px, 5vw, 30px);
         font-style: normal;
         font-weight: 600;
         line-height: 125%; 
@@ -149,4 +149,25 @@
 }
 .slider__slide {
     flex-shrink: 0;
+}
+
+@include media-mx(460) {
+    .reviews__wrapper {
+        padding: 30px;
+    }
+    .reviews__title {
+        margin: 0 0 20px;
+    }
+    .reviews {
+        margin: 0 auto 60px;
+    }
+    .certificate__up {
+        margin: 0 0 25px;
+    }
+    .certificate {
+        margin: 0 0 50px;
+    }
+    .certificate__up-btns:nth-child(2) {
+        width: 150px;
+    }
 }

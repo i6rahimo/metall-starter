@@ -7,18 +7,14 @@
     &__items {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 40px;
-        @include media-mx(790) {
-            flex-wrap: nowrap;
-            gap: 0;
-        }
     }
     &__item {
         flex-shrink: 0;
         width: 360px;
         @include media-mx(790) {
             max-width: 300px;
-
         }
         &-img {
             position: relative;
@@ -51,6 +47,7 @@
             border: 1px solid var(--primary-color);
             height: fit-content;
         @include media-mx(790) {
+            max-width: 300px;
 
             min-height: 400px;
         }
@@ -98,4 +95,9 @@
     .product {
         margin: 0 0 60px;
     }
+}
+
+
+.product__items {
+    flex-wrap: wrap;
 }

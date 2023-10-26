@@ -112,7 +112,29 @@ const certificate = new Swiper('.certificate__slider', {
 	  nextEl: '.certificate-btn-next',
 	  prevEl: '.certificate-btn-prev',
 	},
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 10,
 
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		660: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+
+		},
+		860: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+
+		},
+		},
 });
 
 
@@ -128,7 +150,29 @@ const documentation = new Swiper('.documentation__slider', {
 	  nextEl: '.documentation-btn-next',
 	  prevEl: '.documentation-btn-prev',
 	},
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 10,
 
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		660: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+
+		},
+		860: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+
+		},
+		},
 });
 
 
@@ -145,7 +189,29 @@ const information = new Swiper('.information__slider', {
 	  nextEl: '.information-btn-next',
 	  prevEl: '.information-btn-prev',
 	},
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 10,
 
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		660: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+
+		},
+		860: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+
+		},
+		},
 });
 
 
@@ -161,7 +227,29 @@ const pravo = new Swiper('.pravo__slider', {
 	  nextEl: '.pravo-btn-next',
 	  prevEl: '.pravo-btn-prev',
 	},
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 10,
 
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		660: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+
+		},
+		860: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+
+		},
+		},
 });
 
 
@@ -177,7 +265,29 @@ const recomendation = new Swiper('.recomendation__slider', {
 	  nextEl: '.recomendation-btn-next',
 	  prevEl: '.recomendation-btn-prev',
 	},
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 10,
 
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		660: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+
+		},
+		860: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+
+		},
+		},
 });
 
 
@@ -193,7 +303,29 @@ const company = new Swiper('.company__slider', {
 	  nextEl: '.company-btn-next',
 	  prevEl: '.company-btn-prev',
 	},
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 10,
 
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		660: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+
+		},
+		860: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+
+		},
+		},
 });
 
 
@@ -224,7 +356,29 @@ const partners = new Swiper('.part__wrapper', {
 		  spaceBetween: 40
 		}
 	  },
+	  breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 10,
 
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		660: {
+			slidesPerView: 3,
+			spaceBetween: 10,
+
+		},
+		860: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+
+		},
+		},
 });
 
 const reviewSlider = new Swiper('.about__reviews-slider ', {
