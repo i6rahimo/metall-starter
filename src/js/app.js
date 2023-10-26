@@ -647,3 +647,90 @@ let mainProductSlider = new Swiper('.product__images', {
 	slideClass: 'product__image-slide',
 	wrapperClass: 'product__image',
 })
+
+
+
+const similarProductSlider = new Swiper('.similar__products', {
+	// Optional parameters
+	direction: 'horizontal',
+	loop: true,
+	slideClass: 'similar__product',
+	wrapperClass: 'similar__products-wrapper',
+	spaceBetween: 10,
+	slidesPerView: 3,
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		660: {
+			slidesPerView: 3,
+			spaceBetween: 13,
+
+		},
+
+		},			
+});
+
+
+
+function productTabs() {
+	const tabBtn = document.querySelectorAll('.tabs__btn'),
+		  tabContent = documentation.querySelectorAll('.tabs__inner');
+	console.log(tabBtn);
+}
+productTabs()
+
+
+// let mySwiper = new Swiper(slider, {
+// 	slidesPerView: 3,
+// 	spaceBetween: 10,
+// 	loop: true,
+// 	pagination: {
+// 		el: '.swiper-pagination',
+// 		clickable: true,
+// 	},
+// 	navigation: {
+// 		nextEl: '.swiper-button-next',
+// 		prevEl: '.swiper-button-prev',
+// 	},
+// })
+
+
+
+function mobileSlider() {
+	if (window.innerWidth <= 600 && slider.dataset.mobile == 'false') {
+		let mySwiper = new Swiper(slider, {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			loop: true,
+			slideClass: 'card',
+			// pagination: {
+			// 	el: '.swiper-pagination',
+			// 	clickable: true,
+			// },
+		});
+
+		slider.dataset.mobile = 'true';
+	}
+
+	if (window.innerWidth > 600) {
+		slider.dataset.mobile = 'false';
+		if (slider.classList.contains('swiper-container-initialized')) {
+			mySwiper.destroy();
+		}
+	}
+}
+
+mobileSlider()
+
+window.addEventListener('resize', () => {
+	mobileSlider();
+});
