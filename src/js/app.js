@@ -636,3 +636,14 @@ let mySwiper = new Swiper(slider, {
 	}
 	
 })
+
+
+
+
+let mainProductSlider = new Swiper('.product__images', {
+	loop: true,
+	spaceBetween: 10,
+	slidesPerView: 1,
+	slideClass: 'product__image-slide',
+	wrapperClass: 'product__image',
+})

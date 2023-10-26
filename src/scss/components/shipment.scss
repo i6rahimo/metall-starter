@@ -247,7 +247,7 @@
     .shipment__item-text {
         padding: 25px 25px 30px 25px;
     }
-    .shipment__form-content {
+    .shipment__form-content, .form__shipment {
         padding: 30px 30px 40px 30px;
     }
     .shipment__form-subtitle {
@@ -258,5 +258,12 @@
     }
     .shipment__form-item__text {
         font-size: 14px;
+    }
+    .form__shipment-btn {
+        font-size: 16px;
+        padding: 30px 30px;
+    }
+    .shipment__form {
+        margin: 0 auto 80px;
     }
 }

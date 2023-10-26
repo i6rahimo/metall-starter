@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Главная'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html')
+
+      <main class="page">
+        <div data-observ></div>
+
+        <section class="product">
+            <div class="product__container">
+                <div class="product__wrapper">
+                    <div class="product__images">
+                        <div class="product__image">
+                            <div class="product__image-slide">
+                                <img src="images/product__image-slide.png" alt="Slide 1">
+                            </div>
+                            <div class="product__image-slide">
+                                <img src="images/product__image-slide.png" alt="Slide 1">
+                            </div>
+                            <div class="product__image-slide">
+                                <img src="images/product__image-slide.png" alt="Slide 1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__content">
+                        <h3 class="product__name">Арматура А500с 6 мм сталь 3 ТУ 14-1-5254-94</h3>
+                        <div class="product__characteristics">
+                            <p class="product__characteristics-title">Характеристики</p>
+                            <div class="product__characteristics-wrapper">
+                                <div class="product__characteristics-item">
+                                    <span class="product__characteristics-name">ГОСТ:</span>
+                                    <p class="product__characteristics-data">ТУ 14-1-5254-2006</p>
+                                </div>
+                                <div class="product__characteristics-item">
+                                    <span class="product__characteristics-name">Марка:</span>
+                                    <p class="product__characteristics-data">Сталь 3</p>
+                                </div>
+                                <div class="product__characteristics-item">
+                                    <span class="product__characteristics-name">Диаметр:</span>
+                                    <p class="product__characteristics-data">6 мм</p>
+                                </div>
+                            </div>
+                            <div class="product__characteristics-prices">
+                                <span class="product__characteristics-name price-name">Цена:</span>
+                                <span class="product__characteristics-price product-price">22 500 руб./ м</span>
+                            </div>
+                        </div>
+                        <div class="product__btns">
+                            <div class="product__quantity">
+                                <button class="product__quantity-left">
+                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 9L1 5L5 1" stroke="#181818" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg> 
+                                </button>
+                                <span class="product__quantity-result">100</span>
+                                <button class="product__quantity-right">
+                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 9L5 5L1 1" stroke="#181818" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg> 
+                                </button>
+                            </div>
+                            <button class="product__btn  btn">
+                                Добавить в заказ
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 1L14 7M14 7L9 13M14 7H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tabs">
+            <div class="tabs__container">
+                <div class="tabs__wrapper">
+                    <div class="tabs__btns">
+                        <div class="tabs__btn">Описание</div>
+                        <div class="tabs__btn">Характеристика</div>
+                        <div class="tabs__btn">Доставка и оплата</div>
+                    </div>
+                    <div class="tabs__content-wrapper">
+                        <div class="tabs__inner">Купить товар «Арматура 8 бухта А500 34028-16» в Санкт-Петербурге по выгодной цене за метр, тонну или другую единицу измерения. Онлайн-калькулятор рассчитает стоимость, размеры и массу изделия (кг, т).
+
+                            Ознакомьтесь с описанием и техническими характеристиками товара «Арматура 8 бухта А500 34028-16» на официальном сайте или звоните по номеру в Санкт-Петербурге +7 (812) 123-45-67 и получите консультацию наших специалистов.
+                            
+                            В продаже широкий ассортимент товаров категории «Сортовой прокат»: Катанка, Круг, Арматура и др. Мы отвечаем за качество и предлагаем профессиональный сервис: услуги резки и металлообработки, погрузку и доставку металлопроката.</div>
+                        <div class="tabs__inner"></div>
+                        <div class="tabs__inner"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="shipment__form shipment__form__container">
+            <div class="shipment__form-content">
+                <h3 class="shipment__form-title">Получите <span>расчет стоимости поставки</span></h3>
+                <p class="shipment__form-subtitle">
+                    Оставьте контактные данные <br> или <span>напишите на почту</span>
+                </p>
+                <span class="shipment__form-sub-subtitle">Специалист свяжется с вами и:</span>
+                <div class="shipment__form-items">
+                    <div class="shipment__form-item">
+                        <img src="../images/shi1.svg" alt="" class="shipment__form-item__img">
+                        <span class="shipment__form-item__text">Ответит на все вопросы технического характера</span>
+                    </div>
+                    <div class="shipment__form-item">
+                        <img src="../images/shi2.svg" alt="" class="shipment__form-item__img">
+                        <span class="shipment__form-item__text">Ответит на вопросы по доставке и оплате</span>
+                    </div>
+                    <div class="shipment__form-item">
+                        <img src="../images/shi3.svg" alt="" class="shipment__form-item__img">
+                        <span class="shipment__form-item__text">Подскажет, как лучше реализовать ваши задачи</span>
+                    </div>
+                    <div class="shipment__form-item">
+                        <img src="../images/shi4.svg" alt="" class="shipment__form-item__img">
+                        <span class="shipment__form-item__text">Рассчитает стоимость
+                            и сроки поставки</span>
+                    </div>
+                </div>
+            </div>
+            <form action="" class="shipment__form-form form__shipment">
+                <p class="form__shipment-title">Подготовим расчет <br> стоимости <span>в течение 1 часа</span></p>
+                <label class="form__shipment-label" for="">
+                    Введите номер телефона
+                    <input class="form__shipment-input" type="text" placeholder="+7 (900) 000-00-00"> 
+                </label>
+        
+                <label class="form__shipment-label" for="">
+                    Введите почту
+                    <input class="form__shipment-input" type="text" placeholder="pochta@ya.ru"> 
+                </label>
+                <button class="form__shipment-btn btn">
+                    Получить расчет цены
+                    <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.66667 1L15.5 7M15.5 7L9.66667 13M15.5 7L1.5 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg> 
+                </button>
+                <p class="form__shipment-date">Нажимая на кнопку, вы даёте согласие на обработку персональных данных в соответствии <a class="form__shipment-datelink" href="#">с Политикой конфиденциальности</a></p>
+            </form> 
+        </section>
+      </main>
+
+      @@include('html/footer.html')
+    </div>
+
+    @@include('html/popupExample.html')
+    @@include('html/script.html')
+  </body>
+</html>
