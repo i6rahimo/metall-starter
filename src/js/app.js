@@ -681,12 +681,6 @@ const similarProductSlider = new Swiper('.similar__products', {
 
 
 
-function productTabs() {
-	const tabBtn = document.querySelectorAll('.tabs__btn'),
-		  tabContent = documentation.querySelectorAll('.tabs__inner');
-	console.log(tabBtn);
-}
-productTabs()
 
 
 // let mySwiper = new Swiper(slider, {
@@ -703,34 +697,35 @@ productTabs()
 // 	},
 // })
 
+let photoProductSliders = document.querySelector('.photo__slider')
 
-
-function mobileSlider() {
-	if (window.innerWidth <= 600 && slider.dataset.mobile == 'false') {
-		let mySwiper = new Swiper(slider, {
+function productPhotoSlider() {
+	console.log(photoProductSliders);
+	if (window.innerWidth <= 600 && photoProductSliders.dataset.mobile == 'false') {
+		let mySwiper = new Swiper(photoProductSliders, {
 			slidesPerView: 1,
 			spaceBetween: 10,
-			loop: true,
-			slideClass: 'card',
+			slideClass: 'photo__slide',
+			wrapperClass: 'photo__wrapper',
 			// pagination: {
 			// 	el: '.swiper-pagination',
 			// 	clickable: true,
 			// },
 		});
 
-		slider.dataset.mobile = 'true';
+		photoProductSliders.dataset.mobile = 'true';
 	}
 
 	if (window.innerWidth > 600) {
-		slider.dataset.mobile = 'false';
-		if (slider.classList.contains('swiper-container-initialized')) {
+		photoProductSliders.dataset.mobile = 'false';
+		if (photoProductSliders.classList.contains('swiper-container-initialized')) {
 			mySwiper.destroy();
 		}
 	}
 }
 
-mobileSlider()
+productPhotoSlider()
 
 window.addEventListener('resize', () => {
-	mobileSlider();
+	productPhotoSlider();
 });
