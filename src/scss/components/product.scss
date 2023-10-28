@@ -1,4 +1,5 @@
 .product {
+    margin: 0 0 70px;
     &__wrapper {
         display: flex;
         // flex-wrap: wrap;
@@ -294,6 +295,9 @@
 }
 
 @include media-mx(460) {
+    .product {
+        margin: 0 0 60px;
+    }
     .product__image-slide {
         img {
             object-fit: cover;

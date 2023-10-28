@@ -1,4 +1,4 @@
-.product {
+.products {
     margin: 0 0 120px;
     &__slider { 
         // overflow: hidden;
@@ -7,8 +7,6 @@
     &__items {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 40px;
     }
     &__item {
         flex-shrink: 0;
@@ -62,29 +60,33 @@
     }
 }
 
+.catalog__products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
 
-
-.product__item:nth-child(1) .product__item-img {
+.products__item:nth-child(1) .products__item-img {
     background-image: url('../../images/pr1.png');
 
 }
-.product__item:nth-child(2) .product__item-img {
+.products__item:nth-child(2) .products__item-img {
     background-image: url('../../images/pr2.png');
 }
-.product__item:nth-child(3) .product__item-img {
+.products__item:nth-child(3) .products__item-img {
     background-image: url('../../images/pr3.png');
 }
-.product__item:nth-child(4) .product__item-img {
+.products__item:nth-child(4) .products__item-img {
     background-image: url('../../images/pr4.png');
 }
-.product__item:nth-child(5) .product__item-img  {
+.products__item:nth-child(5) .products__item-img  {
     background-image: url('../../images/pr5.png');
 }
-.product__item:nth-child(6) .product__item-img {
+.products__item:nth-child(6) .products__item-img {
     background-image: url('../../images/pr6.png');
 }
 
-.product__item-href {
+.products__item-href {
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -92,12 +94,35 @@
 
 
 @include media-mx(460) {
-    .product {
+    .products {
         margin: 0 0 60px;
     }
 }
 
-
-.product__items {
+.products__slider {
+    overflow: hidden;
+}
+.products__slider-wrapper {
+    display: flex;
     flex-wrap: wrap;
+    gap: 40px;
+}
+.products__slide {
+    flex-shrink: 0;
+}
+
+@include media-mx(600) {
+    .products__slider {
+        overflow: visible;
+    }
+    .products__slider-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .products__slide {
+        flex-shrink: 0;
+    }
 }

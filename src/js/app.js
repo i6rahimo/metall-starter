@@ -8,13 +8,16 @@
  */
 // import MousePRLX from './libs/parallaxMouse'
 // import AOS from 'aos'
-// import Swiper, { Navigation, Pagination } from 'swiper';
 
 import BaseHelpers from './helpers/BaseHelpers.js';
 import PopupManager from './modules/PopupManager';
 import BurgerMenu from './modules/BurgerMenu';
 import Tabs from './modules/Tabs';
 import Accordion from './modules/Accordion.js';
+import Swiper from './modules/swiper.min.js';
+// import { tree } from 'gulp';
+// import { log } from 'gulp-util';
+
 
 BaseHelpers.checkWebpSupport();
 
@@ -342,12 +345,12 @@ const partners = new Swiper('.part__wrapper', {
 	breakpoints: {
 		// when window width is >= 320px
 		320: {
-		  slidesPerView: 2,
+		  slidesPerView: 3,
 		  spaceBetween: 10
 		},
 		// when window width is >= 480px
 		480: {
-		  slidesPerView: 3,
+		  slidesPerView: 4,
 		  spaceBetween: 30
 		},
 		// when window width is >= 640px
@@ -412,34 +415,6 @@ const reviewSlider = new Swiper('.about__reviews-slider ', {
 });
 
 
-const product = new Swiper('.product__slider', {
-	// Optional parameters
-	direction: 'horizontal',
-	loop: true,
-	slideClass: 'product__slide',
-	wrapperClass: 'product__slider-wrapper',
-	// slidesPerView: 3,
-	spaceBetween: 10,
-	breakpoints: {
-		// when window width is >= 320px
-		320: {
-			slidesPerView: 1,
-			spaceBetween: 10,
-
-		},
-		460: {
-			slidesPerView: 2,
-			spaceBetween: 10,
-
-		},
-		},			
-});
-window.addEventListener('resize', function(event){
-		if(window.innerWidth > 790) {
-			product.destroy()
-		} 
-
-});
 
 
 const aboutSlider = new Swiper('.about-slider', {
@@ -697,14 +672,93 @@ const similarProductSlider = new Swiper('.similar__products', {
 // 	},
 // })
 
-let photoProductSliders = document.querySelector('.photo__slider')
 
-function productPhotoSlider() {
-	console.log(photoProductSliders);
-	if (window.innerWidth <= 600 && photoProductSliders.dataset.mobile == 'false') {
-		let mySwiper = new Swiper(photoProductSliders, {
+// const product = new Swiper('.product__slider', {
+// 	// Optional parameters
+// 	direction: 'horizontal',
+// 	loop: true,
+// 	slideClass: 'product__slide',
+// 	wrapperClass: 'product__slider-wrapper',
+// 	// slidesPerView: 3,
+// 	spaceBetween: 10,
+// 	breakpoints: {
+// 		// when window width is >= 320px
+// 		320: {
+// 			slidesPerView: 1,
+// 			spaceBetween: 10,
+
+// 		},
+// 		460: {
+// 			slidesPerView: 2,
+// 			spaceBetween: 10,
+
+// 		},
+// 		},			
+// });
+// window.addEventListener('resize', function(event){
+// 		if(window.innerWidth > 790) {
+// 			product.destroy()
+// 		} 
+
+// });
+
+
+document.addEventListener('DOMContentLoaded', ()=> {
+
+
+
+	
+	
+
+let productSlider = document.querySelector('.products__slider')
+
+let productsSwiper;
+function productsSlider() {
+
+	if (window.innerWidth <= 600 && productSlider.dataset.mobile == 'false') {
+		productsSwiper = new Swiper(productSlider, {
 			slidesPerView: 1,
 			spaceBetween: 10,
+			loop: false,
+			slideClass: 'products__slide',
+			wrapperClass: 'products__slider-wrapper',
+			// pagination: {
+			// 	el: '.swiper-pagination',
+			// 	clickable: true,
+			// },
+		});
+
+		productSlider.dataset.mobile = 'true';
+
+	}
+
+	if (window.innerWidth > 600) {
+		productSlider.dataset.mobile = 'false';
+		
+		if (productSlider.classList.contains('swiper-container-initialized')) {
+			productsSwiper.destroy(true, true)
+
+		}
+	}
+}
+
+productsSlider()
+
+window.addEventListener('resize', () => {
+	productsSlider();
+	
+});
+	
+let photoProductSliders = document.querySelector('.photo__slider')
+console.log(photoProductSliders);
+let mySwipers;
+function productPhotoSlider() {
+
+	if (window.innerWidth <= 600 && photoProductSliders.dataset.mobile == 'false') {
+		mySwipers = new Swiper(photoProductSliders, {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			loop: false,
 			slideClass: 'photo__slide',
 			wrapperClass: 'photo__wrapper',
 			// pagination: {
@@ -714,18 +768,25 @@ function productPhotoSlider() {
 		});
 
 		photoProductSliders.dataset.mobile = 'true';
+
 	}
 
 	if (window.innerWidth > 600) {
 		photoProductSliders.dataset.mobile = 'false';
+		
 		if (photoProductSliders.classList.contains('swiper-container-initialized')) {
-			mySwiper.destroy();
+			mySwipers.destroy(true, true)
+
 		}
 	}
 }
+
 
 productPhotoSlider()
 
 window.addEventListener('resize', () => {
 	productPhotoSlider();
 });
+	
+
+})

@@ -23,7 +23,7 @@
 * раскомментировать для использования
 */
 // @import 'libs/aos';
-// @import 'libs/swiper';
+@import 'libs/swiper';
 
 /**
 * Подключение custom scrollbar для всего сайта
@@ -59,3 +59,4 @@
 @import 'components/subcatalog';
 @import 'components/reviews';
 @import 'components/product';
+@import 'components/filter-catalog';

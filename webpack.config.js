@@ -32,6 +32,7 @@ export const webpackConfig = (isMode) => {
 
           resolve: {
             fullySpecified: false,
+
           },
         },
       ],
