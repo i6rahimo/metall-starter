@@ -789,4 +789,12 @@ window.addEventListener('resize', () => {
 });
 	
 
+
+
+})
+
+const closeFilterMobile = document.querySelector('.filter__top-close');
+const filterMobile = document.querySelector('.filter__mobile-popup')
+closeFilterMobile.addEventListener('click', ()=> {
+	filterMobile.classList.remove('is-open')
 })
