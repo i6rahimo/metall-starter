@@ -56,6 +56,15 @@
         flex-direction: column;
         gap: 15px;
     }
+    .stock-wrapper{
+        width: 300px;
+    }
+    .stock-slide {
+        max-width: 300px;
+    }
+    .stock-pagination {
+        display: block;
+    }
     .stock-pagination.stock-pagination {
         width: 40%;
         margin: 0 auto 0;

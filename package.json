@@ -78,6 +78,6 @@
   "dependencies": {
     "aos": "^2.3.4",
     "stream-browserify": "^3.0.0",
-    "swiper": "^8.4.7"
+    "swiper": "^11.0.3"
   }
 }

@@ -59,7 +59,10 @@
 .contact__map {
     margin: 50px 0 0;
 }
-
+.contact__map-wrapper {
+    flex-wrap: wrap;
+    gap: 30px;
+}
 .contact__col {
     max-width: 250px;
     display: flex;
@@ -131,6 +134,13 @@
 
 
 @include media-mx(540) {
+    
+    .about__news {
+        margin: 0 auto 60px;
+    }
+    .about__contact {
+        margin: 0 auto 80px;
+    }
     .contact {
         margin: 0 0 60px;
         &__wrapper {
@@ -160,12 +170,16 @@
         margin: 30px 0 0;
     }
     .contact__map {
-        height: 180px;
+        // height: 180px;
         img {
             object-fit: cover;
             height: 100%;
             border-radius: 15px;
         }
+    }
+
+    .map__contact-btn {
+        font-size: 16px;
     }
 
 }

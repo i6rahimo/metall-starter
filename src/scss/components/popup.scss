@@ -152,14 +152,15 @@
 
 .cart__content {
   display: flex;
-  justify-content: space-between;
-
-  max-width: rem(1000);
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
   padding: 0;
   border-radius: 15px;
 }
 
 .popup__cart {
+  max-width: 100%;
   padding: 50px;
   &-title {
     font-size: 22px;
@@ -179,6 +180,7 @@
     line-height: 125%;
     padding: 20px 30px;
     width: rem(400);
+    max-width: 100%;
   }
   &-text {
     max-width: rem(190);
@@ -224,7 +226,7 @@
     align-items: center;
   }
   &-title {
-    font-size: 32px;
+    font-size: clamp(22px, 5vw, 32px);
     font-style: normal;
     font-weight: 600;
     line-height: 125%; 
@@ -246,6 +248,7 @@
     width: 300px;
     background-color: #000;
     color: #fff;
+    max-width: 100%;
   }
   &-btn {
     width: 300px;
@@ -254,5 +257,40 @@
   &-politic {
     width: 300px;
     text-align: center;
+  }
+}
+
+
+
+@include media-mx(600) {
+  .cart__content {
+    gap: 30px;
+  }
+  .popup__cart {
+    padding: 30px 25px;
+    border-radius: 15px;
+    background:#FFF;
+    box-shadow: 0px 30px 100px 0px rgba(0, 0, 0, 0.15);
+  }
+  .cart__form {
+    border-radius: 15px;
+  }
+  .popup__cart-phone p {
+    margin: 30px 0 15px;
+  }
+  .cart__form-subtitle {
+    margin: 15px 0 30px;
+  }
+  .cart__form-wrapper {
+    padding: 30px;
+  }
+  .popup__content {
+    padding: 30px;
+  }
+  .popup__form-explain {
+    height: 90px;
+  }
+  .popup__form-btn {
+    font-size: 16px;
   }
 }

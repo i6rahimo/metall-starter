@@ -14,7 +14,13 @@ import PopupManager from './modules/PopupManager';
 import BurgerMenu from './modules/BurgerMenu';
 import Tabs from './modules/Tabs';
 import Accordion from './modules/Accordion.js';
-import Swiper from './modules/swiper.min.js';
+// import Swiper from './modules/swiper.min.js';
+// import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import Swiper from 'swiper/bundle';
+// import { log } from 'gulp-util';
+
+// import 'swiper/css';
 // import { tree } from 'gulp';
 // import { log } from 'gulp-util';
 
@@ -67,10 +73,12 @@ new Accordion('.accordion', {
 });
 
 const header = document.querySelector('.header')
+const headerArrow = document.querySelector('.header-arrow-is-sticky')
 if( window.location.pathname=="/" || window.location.pathname=="/index.html" ){
-	header.classList.remove('header-main')
+	header.classList.remove('header-main');
 } else {
 	header.classList.add('header-main')
+	headerArrow.classList.add('show')
 }
 
 let isMobile = {
@@ -81,24 +89,24 @@ let isMobile = {
 	Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
 	any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
 };
-		let body=document.querySelector('body');
-if(isMobile.any()){
-		body.classList.add('touch');
-		let arrow=document.querySelectorAll('.arrow');
-	for(i=0; i<arrow.length; i++){
-			let thisLink=arrow[i].previousElementSibling;
-			let subMenu=arrow[i].nextElementSibling;
-			let thisArrow=arrow[i];
+// let body=document.querySelector('body');
+// if(isMobile.any()){
+// 		body.classList.add('touch');
+// 		let arrow=document.querySelectorAll('.arrow');
+// 	for(i=0; i<arrow.length; i++){
+// 			let thisLink=arrow[i].previousElementSibling;
+// 			let subMenu=arrow[i].nextElementSibling;
+// 			let thisArrow=arrow[i];
 
-			thisLink.classList.add('parent');
-		arrow[i].addEventListener('click', function(){
-			subMenu.classList.toggle('open');
-			thisArrow.classList.toggle('active');
-		});
-	}
-}else{
-	body.classList.add('mouse');
-}
+// 			thisLink.classList.add('parent');
+// 		arrow[i].addEventListener('click', function(){
+// 			subMenu.classList.toggle('open');
+// 			thisArrow.classList.toggle('active');
+// 		});
+// 	}
+// }else{
+// 	body.classList.add('mouse');
+// }
 
 
 
@@ -338,10 +346,6 @@ const partners = new Swiper('.part__wrapper', {
 	slideClass: 'part__item',
 	wrapperClass: 'part__items',
 
-	navigation: {
-	  nextEl: '.company-btn-next',
-	  prevEl: '.company-btn-prev',
-	},
 	breakpoints: {
 		// when window width is >= 320px
 		320: {
@@ -356,32 +360,9 @@ const partners = new Swiper('.part__wrapper', {
 		// when window width is >= 640px
 		640: {
 		  slidesPerView: 6,
-		  spaceBetween: 40
+		  spaceBetween: 20
 		}
 	  },
-	  breakpoints: {
-		// when window width is >= 320px
-		320: {
-			slidesPerView: 2,
-			spaceBetween: 10,
-
-		},
-		460: {
-			slidesPerView: 2,
-			spaceBetween: 10,
-
-		},
-		660: {
-			slidesPerView: 3,
-			spaceBetween: 10,
-
-		},
-		860: {
-			slidesPerView: 4,
-			spaceBetween: 30,
-
-		},
-		},
 });
 
 const reviewSlider = new Swiper('.about__reviews-slider ', {
@@ -445,6 +426,7 @@ const aboutSlider = new Swiper('.about-slider', {
 
 const stockSlider = new Swiper('.stock-slider', {
 	// Optional parameters
+	modules: [Navigation, Pagination],
 	direction: 'horizontal',
 	loop: true,
 	slideClass: 'stock-slide',
@@ -453,7 +435,7 @@ const stockSlider = new Swiper('.stock-slider', {
     	el: '.stock-pagination',
   	},
 	// slidesPerView: 3,
-	spaceBetween: 10,
+	spaceBetween: 0,
 	breakpoints: {
 		// when window width is >= 320px
 		320: {
@@ -572,6 +554,7 @@ const slider = document.querySelector('.about__gallery-main');
 const sliderNav = document.querySelector('.about__gallery-submain');
 
 let mySwiperNav = new Swiper(sliderNav, {
+	modules: [Navigation, Pagination],
 	slidesPerView: 5,
 	spaceBetween: 10,
 	loopedSlides: 5,
@@ -583,7 +566,7 @@ let mySwiperNav = new Swiper(sliderNav, {
 	wrapperClass: 'about__gallery-main-wrapper',
 
 	pagination: {
-		el: '.swiper-pagination',
+		el: '.photo-slider-pagination',
 		clickable: true,
 	},
 	navigation: {
@@ -593,13 +576,14 @@ let mySwiperNav = new Swiper(sliderNav, {
 })
 
 let mySwiper = new Swiper(slider, {
+	modules: [Navigation, Pagination],
 	spaceBetween: 10,
 	loopedSlides: 5,
 	slideClass: 'about__gallery-main-slide',
 	wrapperClass: 'about__gallery-main-wrapper',
 
 	pagination: {
-		el: '.swiper-pagination',
+		el: '.photo-slider-pagination',
 		clickable: true,
 	},
 	navigation: {
@@ -656,7 +640,32 @@ const similarProductSlider = new Swiper('.similar__products', {
 
 
 
+const aboutNewsSlider = new Swiper('.about__news-slider', {
+	// Optional parameters
+	direction: 'horizontal',
+	loop: true,
+	slideClass: 'about__news-slide',
+	wrapperClass: 'about__news-wrapper',
 
+	breakpoints: {
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+
+		},
+		460: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+		},
+		660: {
+			slidesPerView: 3,
+			spaceBetween: 40,
+		},
+
+		},			
+});
 
 // let mySwiper = new Swiper(slider, {
 // 	slidesPerView: 3,
@@ -701,22 +710,22 @@ const similarProductSlider = new Swiper('.similar__products', {
 // 		} 
 
 // });
+const closeFilterMobile = document.querySelector('.filter__top-close');
+const filterMobile = document.querySelector('.filter__mobile-popup')
+closeFilterMobile.addEventListener('click', ()=> {
+	filterMobile.classList.remove('is-open')
+})
+if( window.location.pathname=="/" || window.location.pathname=="/index.html" ){
 
-
-document.addEventListener('DOMContentLoaded', ()=> {
-
-
-
-	
-	
-
-let productSlider = document.querySelector('.products__slider')
-
-let productsSwiper;
 function productsSlider() {
+	
+		let productSlider = document.querySelector('.products__slider')
+		
+		let productsSwiper;
 
 	if (window.innerWidth <= 600 && productSlider.dataset.mobile == 'false') {
 		productsSwiper = new Swiper(productSlider, {
+			modules: [Navigation, Pagination],
 			slidesPerView: 1,
 			spaceBetween: 10,
 			loop: false,
@@ -736,7 +745,7 @@ function productsSlider() {
 		productSlider.dataset.mobile = 'false';
 		
 		if (productSlider.classList.contains('swiper-container-initialized')) {
-			productsSwiper.destroy(true, true)
+			productsSwiper.destroy()
 
 		}
 	}
@@ -748,53 +757,57 @@ window.addEventListener('resize', () => {
 	productsSlider();
 	
 });
-	
-let photoProductSliders = document.querySelector('.photo__slider')
-console.log(photoProductSliders);
-let mySwipers;
-function productPhotoSlider() {
+}
+if( window.location.pathname=="/" || window.location.pathname=="/product.html" ){
 
-	if (window.innerWidth <= 600 && photoProductSliders.dataset.mobile == 'false') {
-		mySwipers = new Swiper(photoProductSliders, {
-			slidesPerView: 1,
-			spaceBetween: 10,
-			loop: false,
-			slideClass: 'photo__slide',
-			wrapperClass: 'photo__wrapper',
-			// pagination: {
-			// 	el: '.swiper-pagination',
-			// 	clickable: true,
-			// },
-		});
-
-		photoProductSliders.dataset.mobile = 'true';
-
-	}
-
-	if (window.innerWidth > 600) {
-		photoProductSliders.dataset.mobile = 'false';
+	function productPhotoSlider() {
+			
+		let photoProductSliders = document.querySelector('.photo__slider')
 		
-		if (photoProductSliders.classList.contains('swiper-container-initialized')) {
-			mySwipers.destroy(true, true)
-
+		let mySwipers;
+		
+		if (window.innerWidth <= 600 && photoProductSliders.dataset.mobile == 'false') {
+			mySwipers = new Swiper(photoProductSliders, {
+				modules: [Navigation, Pagination],
+				slidesPerView: 1,
+				spaceBetween: 10,
+				loop: false,
+				slideClass: 'photo__slide',
+				wrapperClass: 'photo__wrapper',
+				pagination: {
+						el: '.photo-slider-pagination',
+						clickable: true,
+					},
+				});
+				
+				photoProductSliders.dataset.mobile = 'true';
+				
+			}
+	
+		if (window.innerWidth > 600) {
+			photoProductSliders.dataset.mobile = 'false';
+			
+			if (photoProductSliders.classList.contains('swiper-container-initialized')) {
+				mySwipers.destroy(true, true)
+				
+			}
 		}
 	}
-}
-
-
-productPhotoSlider()
-
-window.addEventListener('resize', () => {
-	productPhotoSlider();
-});
+	
+	
+	productPhotoSlider()
+	
+	window.addEventListener('resize', () => {
+		productPhotoSlider();
+	});
 	
 
+} else {
 
-
-})
-
-const closeFilterMobile = document.querySelector('.filter__top-close');
-const filterMobile = document.querySelector('.filter__mobile-popup')
-closeFilterMobile.addEventListener('click', ()=> {
-	filterMobile.classList.remove('is-open')
-})
+	
+	// }
+	
+	
+	
+	
+}

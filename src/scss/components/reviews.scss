@@ -84,9 +84,8 @@
     border: 1px solid #181818;
     &::after {
         content: url('../../images/arrow-black.svg');
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin-bottom: 15px;
+
     }
 }
 
@@ -95,11 +94,12 @@
     height: 38px;
     background-color: var(--secondary-color);
     border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &::after {
         content: url('../../images/arrow.svg');
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin-bottom: 15px;
     }
 }
 

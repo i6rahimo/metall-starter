@@ -75,7 +75,9 @@
 
 }
 
-
+.deliver__text-mb {
+    display: none;
+}
 @include media-mx(790) {
     .deliver {
         &__title {

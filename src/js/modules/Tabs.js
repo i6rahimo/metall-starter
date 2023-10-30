@@ -31,7 +31,7 @@ class Tabs {
     this.tabs = document.querySelector(`[data-tabs="${selector}"]`);
 
     if (!this.tabs) {
-      console.error(this.errors.selectorNotExist);
+      // console.error(this.errors.selectorNotExist);
       return;
     }
 

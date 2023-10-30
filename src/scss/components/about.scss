@@ -283,11 +283,14 @@
 .about__reviews-btns-mb {
     display: none;
 }
+.about__reviews-wrapper {
+    // overflow: hidden;
+}
 @include media-mx(640) {
     .about__reviews-btns-mb {
         display: flex;
         position: absolute;
-        bottom: 0;
+        bottom: 45px;
         left: 33%;
         right: 0;
         width: 114px;
@@ -302,9 +305,10 @@
     overflow: hidden;
     @include media-mx(640) {
         overflow: visible;
+        margin: 0 auto 60px;
     }
     @include media-mx(460) {
-        width: 300px;
+
     }
     &-title {
         font-size: clamp(28px, 5vw,44px);
@@ -540,6 +544,7 @@
     align-items: center;
     justify-content: center;
     transform: rotate(180deg);
+    margin-top: 35px;
 }
 
 .about__gallery-submain {
@@ -565,11 +570,55 @@
     }
 }
 .about__galleryslider {
-    margin: 0 0 120px;
+    margin: 0 auto 120px;
+}
+.about__reviews-slide-text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    margin: 30px 0 10px; 
+}
+.about__reviews-slide-name {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%; 
+}
+
+.about__gallery-pagination {
+    display: none;
+    justify-content: center;
+    margin: 15px auto 0;
+}
+
+.about__news-slider {
+    overflow: hidden;
+}
+
+.about__news-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.about__news-slide {
+    flex-shrink: 0;
 }
 @include media-mx(460) {
+    .about__news-slider {
+        overflow: visible;
+    }
+    .about__gallery-main {
+        overflow: visible;
+    }
+    .about__gallery-pagination {
+        display: flex;
+    }
+    .about__reviews-slider.slider {
+        padding: 30px 0 100px;
+    }
     .about__galleryslider {
-        margin: 0 0 60px;
+        margin: 0 auto 60px;
     }
     .about {
         margin: 0 0 60px;
@@ -637,10 +686,34 @@
 
 
 @include media-mx(460) {
+    .about__reviews {
+        margin: 0 auto 60px;
+    }
     .about__hero {
         padding: 30px 30px 40px;
         margin: 0 auto 60px;
-
+    }
+    .about__staff-slide {
+        width: 300px !important;
+        img {
+        width: 100%;
+        }
+    }
+    .about__gallery-submain {
+        display: none;
+    }
+    .about__gallery-btns {
+        display: none;
+    }
+    .about__gallery-main-slide {
+        width: 300px;
+        height: 200px;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
     }
 }
 @include media-mx(640) {

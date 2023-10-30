@@ -265,7 +265,12 @@
         width: 450px;
     }
 }
-
+.photo-slider-pagination {
+    display: none;
+    width: 6px;
+    height: 6px;
+    border-radius: 100px;
+}
 @include media-mx(860) {
     .product__wrapper {
         flex-wrap: wrap;
@@ -281,7 +286,9 @@
     }
 }
 @include media-mx(600) {
-    
+    .photo-slider-pagination {
+        display: flex;
+    }
     .photo__wrapper {
         display: flex;
         flex-wrap: nowrap;
@@ -291,6 +298,16 @@
     .photo__slide {
         width: 300px;
         flex-shrink: 0;
+        &:nth-child(4) {
+            img {
+                height: 100%;
+            }
+        }
+        &:nth-child(5) {
+            img {
+                height: 100%;
+            }
+        }
     }
 }
 
