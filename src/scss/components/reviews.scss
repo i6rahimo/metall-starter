@@ -104,10 +104,10 @@
 }
 
 .documentation-btn-next {
-    display: block;
+    display: flex;
 }
 .documentation-btn-prev {
-    display: block;
+    display: flex;
 }
 
 .slider {
@@ -145,6 +145,20 @@
         background: #F1F1F1;
         opacity: .2;
         z-index: 1;
+    }
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 30%;
+        height: 100%;
+        // left: 50%;
+        transform: translateX(100%);
+        top: 0;
+        right: 0;
+        background: #fff;
+        opacity: .4;
+        z-index: 11;
     }
 }
 .slider__slide {

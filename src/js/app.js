@@ -758,7 +758,7 @@ window.addEventListener('resize', () => {
 	
 });
 }
-if( window.location.pathname=="/" || window.location.pathname=="/product.html" ){
+if(   window.location.pathname=="/product.html" ){
 
 	function productPhotoSlider() {
 			
@@ -810,4 +810,33 @@ if( window.location.pathname=="/" || window.location.pathname=="/product.html" )
 	
 	
 	
+}
+
+if(   window.location.pathname=="/index.html" || window.location.pathname == '/contact.html' ) {
+
+	
+	let center = [59.908046564187565,30.324779499999977];
+	
+function init() {
+	let map = new ymaps.Map('map-test', {
+		center: center,
+		zoom: 17
+	});
+	let placemark = new ymaps.Placemark(center, {}, {
+		iconLayout: 'default#image',
+		iconImageSize: [40, 40],
+		iconImageOffset: [-19, -44]
+	});
+	map.controls.remove('geolocationControl'); // удаляем геолокацию
+	map.controls.remove('searchControl'); // удаляем поиск
+	map.controls.remove('trafficControl'); // удаляем контроль трафика
+	map.controls.remove('typeSelector'); // удаляем тип
+	map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+	map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+	map.controls.remove('rulerControl'); // удаляем контрол правил
+	map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+	map.geoObjects.add(placemark);
+}
+
+ymaps.ready(init);
 }

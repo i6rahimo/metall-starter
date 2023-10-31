@@ -4,11 +4,22 @@
     'title': 'Контакты'
   })
   <body>
-    <div class="wrapper">
-      @@include('html/header.html')
+      <div class="wrapper">
+          @@include('html/header.html')
+          <div class="breadcrumbs">
+              <div class="breadcrumbs__container">
+                  <ul class="breadcrumbs__ul">
+                      <li class="breadcrumbs__li">
+                          <a class="breadcrumbs__link" href="index.html">Главная</a>
+                      </li>
+                      <li class="breadcrumbs__li">
+                          <a class="breadcrumbs__link active" href="index.html">Каталог</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
 
       <main class="page">
-        <div data-observ></div>
         <section class="products">
             <div class="products__container">
                 <div class="products__items catalog__products">
