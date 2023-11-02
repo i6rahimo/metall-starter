@@ -370,7 +370,6 @@ const reviewSlider = new Swiper('.about__reviews-slider ', {
 	loop: false,
 	slideClass: 'about__reviews-slide',
 	wrapperClass: 'about__reviews-wrapper',
-
 	navigation: {
 	  nextEl: '.about__reviews-btn-next',
 	  prevEl: '.about__reviews-btn-prev',
@@ -378,19 +377,27 @@ const reviewSlider = new Swiper('.about__reviews-slider ', {
 	breakpoints: {
 		// when window width is >= 320px
 		320: {
-		  slidesPerView: 2,
-		  spaceBetween: 10
+			slidesPerView: 2,
+			spaceBetween: 10,
 		},
 		// when window width is >= 480px
 		480: {
-		  slidesPerView: 3,
-		  spaceBetween: 30
+			slidesPerView: 3,
+			spaceBetween: 30
 		},
 		// when window width is >= 640px
 		640: {
-		  slidesPerView: 6,
-		  spaceBetween: 40
-		}
+			slidesPerView: 4,
+			spaceBetween: 40,
+		},
+		1080: {
+			navigation: {
+				nextEl: '.about__reviews-btn-next-mb',
+				prevEl: '.about__reviews-btn-prev-mb',
+			  },
+			slidesPerView: 6,
+			spaceBetween: 40,
+		  }
 	  },
 
 });
@@ -605,6 +612,10 @@ let mainProductSlider = new Swiper('.product__images', {
 	slidesPerView: 1,
 	slideClass: 'product__image-slide',
 	wrapperClass: 'product__image',
+	pagination: {
+		el: '.product__images-pagination',
+	  },
+	
 })
 
 
@@ -812,7 +823,8 @@ if(   window.location.pathname=="/product.html" ){
 	
 }
 
-if(   window.location.pathname=="/index.html" || window.location.pathname == '/contact.html' ) {
+if(   window.location.pathname=="/index.html" || window.location.pathname == '/contact.html' || window.location.pathname == '/about-page.html' ) {
+
 
 	
 	let center = [59.908046564187565,30.324779499999977];
@@ -839,4 +851,45 @@ function init() {
 }
 
 ymaps.ready(init);
+
 }
+function quantityCartItem() {
+	const cartQuantity = document.querySelector('.cart-quantity'),
+		  cartItemsWrapper = document.querySelector('.popup__cart-wrapper'),
+		  cartItem = document.querySelectorAll('.popup__cart-product').length;
+	// cartItem.forEach(e => {
+	// 	let item = e;
+	// 	console.log(item);
+	// })
+	console.log(cartItem);
+	console.log(cartQuantity.innerHTML);
+	cartQuantity.innerHTML = cartItem
+
+}
+
+quantityCartItem()
+
+
+if(   window.location.pathname == '/product.html' ) {
+
+
+function productQuantity() {
+	const plusBtn  = document.querySelector('.product__quantity-right');
+	const minusBtn = document.querySelector('.product__quantity-left');
+	const result = document.querySelector('.product__quantity-result');
+
+	plusBtn.addEventListener('click', ()=> {
+		result.value++
+	})
+	minusBtn.addEventListener('click', ()=> {
+		if(result.value < 1) {
+			result.value = 1
+		}
+		result.value--
+	})
+}
+
+productQuantity()
+
+}
+

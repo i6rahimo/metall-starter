@@ -157,6 +157,7 @@
   max-width: 100%;
   padding: 0;
   border-radius: 15px;
+  box-shadow: unset;
 }
 
 .popup__cart {
@@ -245,13 +246,13 @@
   }
   &-input {
     margin: 0 auto 15px;
-    width: 300px;
+    max-width: 300px;
     background-color: #000;
     color: #fff;
     max-width: 100%;
   }
   &-btn {
-    width: 300px;
+    max-width: 300px;
     margin: 15px auto 15px;
   }
   &-politic {
@@ -286,6 +287,9 @@
   }
   .popup__content {
     padding: 30px;
+  }
+  .cart__content {
+    padding: 0;
   }
   .popup__form-explain {
     height: 90px;

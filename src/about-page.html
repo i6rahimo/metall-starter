@@ -8,7 +8,18 @@
       @@include('html/header.html')
 
       <main class="page">
-        <div data-observ></div>
+        <div class="breadcrumbs">
+          <div class="breadcrumbs__container">
+              <ul class="breadcrumbs__ul">
+                  <li class="breadcrumbs__li">
+                      <a class="breadcrumbs__link" href="index.html">Главная</a>
+                  </li>
+                  <li class="breadcrumbs__li">
+                      <a class="breadcrumbs__link active" href="index.html">О компании</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
 
         @@include('html/aboutpage-components.html')
         <!-- @@include('html/partners.html') -->
