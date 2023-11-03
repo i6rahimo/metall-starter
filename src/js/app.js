@@ -721,10 +721,12 @@ const aboutNewsSlider = new Swiper('.about__news-slider', {
 // 		} 
 
 // });
+const htmlTag = document.querySelector('html');
 const closeFilterMobile = document.querySelector('.filter__top-close');
 const filterMobile = document.querySelector('.filter__mobile-popup')
 closeFilterMobile.addEventListener('click', ()=> {
 	filterMobile.classList.remove('is-open')
+	htmlTag.classList.remove('lock')
 })
 if( window.location.pathname=="/" || window.location.pathname=="/index.html" ){
 
@@ -853,16 +855,28 @@ function init() {
 ymaps.ready(init);
 
 }
+
+
+
+function deleteProduct() {
+	const deleteBtn = document.querySelectorAll('.popup__cart-btn');
+	deleteBtn.forEach(e => {
+		let self = e.currentTarget;
+		console.log(e);
+		let selfProduct = e.closest('.popup__cart-product');
+		e.addEventListener('click', ()=> {
+			selfProduct.remove()
+	quantityCartItem()
+
+		})
+		console.log(selfProduct);
+	})
+}
+deleteProduct()
 function quantityCartItem() {
 	const cartQuantity = document.querySelector('.cart-quantity'),
 		  cartItemsWrapper = document.querySelector('.popup__cart-wrapper'),
 		  cartItem = document.querySelectorAll('.popup__cart-product').length;
-	// cartItem.forEach(e => {
-	// 	let item = e;
-	// 	console.log(item);
-	// })
-	console.log(cartItem);
-	console.log(cartQuantity.innerHTML);
 	cartQuantity.innerHTML = cartItem
 
 }
@@ -891,5 +905,53 @@ function productQuantity() {
 
 productQuantity()
 
+const productBtn = document.querySelector('.product__btn');
+const cartProductList = document.querySelector('.popup__cart-wrapper');
+
+
+const generateCartProduct = (name) => {
+	return `
+		<div class="popup__cart-product">
+			<div class="popup__cart-text">
+				<span class="popup__cart-number">№1.</span>
+				<p class="popup__cart-name">${name}</p>
+			</div>
+			<button class="popup__cart-btn">
+				<svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 5.02941H20M8.125 16.7941V9.73529M12.875 16.7941V9.73529M15.25 21.5H5.75C4.43832 21.5 3.375 20.4466 3.375 19.1471V6.20588C3.375 5.55614 3.90666 5.02941 4.5625 5.02941H16.4375C17.0933 5.02941 17.625 5.55614 17.625 6.20588V19.1471C17.625 20.4466 16.5617 21.5 15.25 21.5ZM8.125 5.02941H12.875C13.5308 5.02941 14.0625 4.50269 14.0625 3.85294V2.67647C14.0625 2.02672 13.5308 1.5 12.875 1.5H8.125C7.46916 1.5 6.9375 2.02672 6.9375 2.67647V3.85294C6.9375 4.50269 7.46916 5.02941 8.125 5.02941Z" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg> 
+			</button>
+		</div>
+	`;
+};
+
+
+
+productBtn.addEventListener('click', (e)=> {
+	let self = e.currentTarget;
+	let name = self.closest('.product__quantity')
+	const productName = document.querySelector('.product__name').innerHTML
+	cartProductList.insertAdjacentHTML('afterbegin', generateCartProduct(productName))
+	quantityCartItem()
+deleteProduct()
+
+})
+} else {
+
 }
+
+function closePopups() {
+	const closeBtns = document.querySelectorAll('.poup__content-close'),
+		  popups = document.querySelectorAll('.popup');
+	closeBtns.forEach(e => {
+		e.addEventListener('click', ()=> {
+			popups.forEach(item => {
+				item.classList.remove('is-open');
+				htmlTag.classList.remove('lock')
+			})
+		})
+	});
+}
+
+closePopups()
 

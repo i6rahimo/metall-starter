@@ -1,9 +1,10 @@
 .hero {
-    background-image: url("../../images/hero-bg.png");
+    background: url("../../static/video-bg.mp4");
     background-position: center;
     background-size: cover;
     padding: 180px 0 100px;
     margin: 0 0 100px;
+    position: relative;
     &__title {
         font-size: 50px;
         font-style: normal;
@@ -32,6 +33,17 @@
 }
 
 
+#background-video {
+    width: 100vw;
+    height: -webkit-fill-available;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 .hero__items {
     display: flex;
     align-items: center;
