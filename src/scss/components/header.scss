@@ -197,7 +197,35 @@
     }
   }
 }
+.header__search-get {
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  // background: #fff;
+  // border: 1px solid #F1F1F1;
+  // width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  // z-index: 1;
 
+  a {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    color: #181818;
+  }
+
+}
+.popup__content-search.popup__content-search {
+  padding: 30px;
+  margin: 90px auto;
+  max-width: 100%;
+}
+#popup__search {
+  background-color: #ffffff00;
+}
 
 .header__menu {
   width: 100%;
@@ -500,6 +528,9 @@ html.menu-open .header {
 
 
 @include media-mx(940) {
+  .popup__content-search.popup__content-search {
+    margin: 155px auto;
+  }
   .header__main-search, .header__main-download, .header__main-tel  {
     display: none;
   }

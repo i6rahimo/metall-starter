@@ -620,6 +620,18 @@
 .about__news-slide {
     flex-shrink: 0;
 }
+#map-test-about {
+    width: 550px;
+    max-width: 100%;
+}
+.about__contact-page.about__contact-page {
+    flex-wrap: nowrap;
+}
+@include media-mx(800) {
+    .about__contact-page.about__contact-page {
+        flex-wrap: wrap;
+    }
+}
 @include media-mx(460) {
     .about__reviews-bg::after {
         height: 72%;

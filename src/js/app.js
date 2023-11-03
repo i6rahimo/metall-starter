@@ -825,36 +825,85 @@ if(   window.location.pathname=="/product.html" ){
 	
 }
 
-if(   window.location.pathname=="/index.html" || window.location.pathname == '/contact.html' || window.location.pathname == '/about-page.html' ) {
-
-
-	
+if(window.location.pathname=="/about-page.html" ) {
+	console.log('qwe');
 	let center = [59.908046564187565,30.324779499999977];
 	
-function init() {
-	let map = new ymaps.Map('map-test', {
-		center: center,
-		zoom: 17
-	});
-	let placemark = new ymaps.Placemark(center, {}, {
-		iconLayout: 'default#image',
-		iconImageSize: [40, 40],
-		iconImageOffset: [-19, -44]
-	});
-	map.controls.remove('geolocationControl'); // удаляем геолокацию
-	map.controls.remove('searchControl'); // удаляем поиск
-	map.controls.remove('trafficControl'); // удаляем контроль трафика
-	map.controls.remove('typeSelector'); // удаляем тип
-	map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
-	map.controls.remove('zoomControl'); // удаляем контрол зуммирования
-	map.controls.remove('rulerControl'); // удаляем контрол правил
-	map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
-	map.geoObjects.add(placemark);
-}
+	function inits() {
+		let map = new ymaps.Map('map-test-about', {
+			center: center,
+			zoom: 17
+		});
+		let placemark = new ymaps.Placemark(center, {}, {
+			iconLayout: 'default#image',
+			iconImageSize: [40, 40],
+			iconImageOffset: [-19, -44]
+		});
+		map.controls.remove('geolocationControl'); // удаляем геолокацию
+		map.controls.remove('searchControl'); // удаляем поиск
+		map.controls.remove('trafficControl'); // удаляем контроль трафика
+		map.controls.remove('typeSelector'); // удаляем тип
+		map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+		map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+		map.controls.remove('rulerControl'); // удаляем контрол правил
+		map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+		map.geoObjects.add(placemark);
+	}
+	
+	ymaps.ready(inits);
+} else if (window.location.pathname=="/index.html") {
+	let center = [59.908046564187565,30.324779499999977];
 
-ymaps.ready(init);
+	function mapIndex() {
+		let map = new ymaps.Map('map-test-contact', {
+			center: center,
+			zoom: 17
+		});
+		let placemark = new ymaps.Placemark(center, {}, {
+			iconLayout: 'default#image',
+			iconImageSize: [40, 40],
+			iconImageOffset: [-19, -44]
+		});
+		map.controls.remove('geolocationControl'); // удаляем геолокацию
+		map.controls.remove('searchControl'); // удаляем поиск
+		map.controls.remove('trafficControl'); // удаляем контроль трафика
+		map.controls.remove('typeSelector'); // удаляем тип
+		map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+		map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+		map.controls.remove('rulerControl'); // удаляем контрол правил
+		map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+		map.geoObjects.add(placemark);
+	}
+	
+	ymaps.ready(mapIndex);
+} else {
+	let center = [59.908046564187565,30.324779499999977];
 
+	function mapContact() {
+		let map = new ymaps.Map('map-test', {
+			center: center,
+			zoom: 17
+		});
+		let placemark = new ymaps.Placemark(center, {}, {
+			iconLayout: 'default#image',
+			iconImageSize: [40, 40],
+			iconImageOffset: [-19, -44]
+		});
+		map.controls.remove('geolocationControl'); // удаляем геолокацию
+		map.controls.remove('searchControl'); // удаляем поиск
+		map.controls.remove('trafficControl'); // удаляем контроль трафика
+		map.controls.remove('typeSelector'); // удаляем тип
+		map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+		map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+		map.controls.remove('rulerControl'); // удаляем контрол правил
+		map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+		map.geoObjects.add(placemark);
+	}
+	
+	ymaps.ready(mapContact);
 }
+ 
+
 
 
 
