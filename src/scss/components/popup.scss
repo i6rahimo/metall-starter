@@ -71,6 +71,7 @@
 }
 
 .poup__content-close {
+  cursor: pointer;
   margin: 0 0 0 auto;
 }
 .popup__body {
@@ -199,6 +200,17 @@
     flex-direction: column;
     gap: 10px;
     margin: 25px 0 0;
+
+    &::-webkit-scrollbar:horizontal {
+      height: 0;
+      width: 0;
+      display: none;
+    }
+    
+    &::-webkit-scrollbar-thumb:horizontal {
+      display: none;
+    }
+    
   }
   &-btn {
     background: none;
@@ -257,7 +269,7 @@
     max-width: 300px;
     background-color: #000;
     color: #fff;
-    max-width: 100%;
+    width: 100%;
   }
   &-btn {
     max-width: 300px;
@@ -307,4 +319,14 @@
   .popup__form-btn {
     font-size: 16px;
   }
+}
+
+.popup__cart-wrapper::-webkit-scrollbar:horizontal {
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+.popup__cart-wrapper::-webkit-scrollbar-thumb:horizontal {
+  display: none;
 }

@@ -955,6 +955,7 @@ function productQuantity() {
 productQuantity()
 
 const productBtn = document.querySelector('.product__btn');
+const productBtnAdded = document.querySelector('.product__btn-added');
 const cartProductList = document.querySelector('.popup__cart-wrapper');
 
 
@@ -982,8 +983,9 @@ productBtn.addEventListener('click', (e)=> {
 	const productName = document.querySelector('.product__name').innerHTML
 	cartProductList.insertAdjacentHTML('afterbegin', generateCartProduct(productName))
 	quantityCartItem()
-deleteProduct()
-
+	deleteProduct()
+	productBtnAdded.classList.add('active')
+	self.classList.add('remove')
 })
 } else {
 

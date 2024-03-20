@@ -73,6 +73,25 @@
     display: flex;
     gap: 30px;
 }
+.product__btn {
+    font-size: 20px;
+}
+.product__btn.remove {
+    display: none;
+}
+.product__btn-added {
+    display: none;
+    background-color: #fff;
+    color: var(--secondary-color);
+    outline: 1px solid var(--secondary-color);
+    svg {
+        width: 25px;
+        fill: var(--secondary-color);
+    }
+}
+.product__btn-added.active {
+    display: flex;
+}
 .product__quantity {
     display: inline-flex;
     padding: 31px 25px;
